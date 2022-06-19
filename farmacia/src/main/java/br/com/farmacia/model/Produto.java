@@ -1,4 +1,4 @@
-package br.com.farmacia.domain;
+package br.com.farmacia.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

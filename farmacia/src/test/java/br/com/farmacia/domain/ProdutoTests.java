@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import br.com.farmacia.model.Produto;
+
 @SpringBootTest
 public class ProdutoTests {
 	@Test

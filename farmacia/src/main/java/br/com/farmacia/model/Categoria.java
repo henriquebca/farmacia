@@ -1,4 +1,4 @@
-package br.com.farmacia.domain;
+package br.com.farmacia.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

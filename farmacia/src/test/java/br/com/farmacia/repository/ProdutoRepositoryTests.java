@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import br.com.farmacia.domain.Produto;
+import br.com.farmacia.model.Produto;
 
 @SpringBootTest
 public class ProdutoRepositoryTests {

@@ -6,15 +6,15 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.farmacia.domain.Categoria;
 import br.com.farmacia.exception.RecursoNaoEncontradoException;
+import br.com.farmacia.model.Categoria;
 import br.com.farmacia.repository.CategoriaRepository;
 @Service
 public class CategoriaService {	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	public Categoria buscarPorCodigo(Short codigo) {
+	public Categoria findById(Short codigo) throws RecursoNaoEncontradoException {
 		Optional<Categoria> resultado = categoriaRepository.findById(codigo);
 		
 		if (resultado.isEmpty()) {
@@ -24,17 +24,17 @@ public class CategoriaService {
 		return categoria;	
 		}
 	
-	public List<Categoria> listar(){
+	public List<Categoria> findAll(){
 		List<Categoria> resultado = categoriaRepository.findAll();
 		return resultado;
 	}
 	
-	public Categoria inserir (Categoria categoria) {
+	public Categoria save (Categoria categoria) {
 		Categoria categoriaSalva = categoriaRepository.save(categoria);
 		return categoriaSalva;
 	}
 	
-	public Categoria excluir(Short codigo){
+	public Categoria delete(Short codigo){
 		Optional<Categoria> categoria = categoriaRepository.findById(codigo);
 		categoriaRepository.delete(categoria.get());
 		Categoria categoriaRetorno = categoria.get();
