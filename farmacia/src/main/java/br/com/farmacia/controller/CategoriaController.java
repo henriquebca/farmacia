@@ -16,13 +16,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.farmacia.exception.RecursoNaoEncontradoException;
 import br.com.farmacia.model.Categoria;
-import br.com.farmacia.service.CategoriaService;
+import br.com.farmacia.service.impl.CategoriaServiceImpl;
 
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
 	@Autowired
-	private CategoriaService categoriaService;
+	private CategoriaServiceImpl categoriaService;
 	
 	@GetMapping("/{codigo}")
 	public Categoria findById(@PathVariable Short codigo) throws Exception {
@@ -42,16 +42,17 @@ public class CategoriaController {
 		return categoriaSalva;
 	}
 	
-	@DeleteMapping("/{codigo}")
-	public void delete(@PathVariable Short codigo){
-		categoriaService.delete(codigo);
-		return;
-	}
-	
 	@PutMapping       
 	public Categoria editar(@RequestBody Categoria categoria) {
 		Categoria categoriaEditada = categoriaService.editar(categoria);
 		return categoriaEditada;
+	}
+	
+
+	@DeleteMapping("/{codigo}")
+	public void delete(@PathVariable Short codigo) throws Exception{
+		categoriaService.delete(codigo);
+		return;
 	}
 	
 }
