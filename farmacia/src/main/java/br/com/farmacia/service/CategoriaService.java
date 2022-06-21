@@ -12,8 +12,8 @@ public interface CategoriaService {
 	
 	Categoria save (Categoria categoria);
 	
-	Categoria editar(Categoria categoria);
+	void update(Short codigo) throws Exception;
 
-	Categoria delete(Short codigo) throws Exception;
+	void delete(Short codigo) throws Exception;
 	
 }

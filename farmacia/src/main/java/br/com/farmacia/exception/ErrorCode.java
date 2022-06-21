@@ -11,7 +11,7 @@ public enum ErrorCode {
 	}
 
 	public int getValue() {
-		return this.value;
+		return value;
 	}
 
 }
